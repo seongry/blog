@@ -3,7 +3,7 @@ module.exports = {
     title: `Raina's log`,
     author: `SeongRyeong Kim`,
     description: `A log about Web development written by raina`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://raina94.github.io/`,
   },
   plugins: [
     {
