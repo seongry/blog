@@ -16,7 +16,10 @@ function Bio() {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author } = data.site.siteMetadata
+        const { author } = data.site.siteMetadata;
+        const headerTextStyle = {
+          margin: 0
+        };
         return (
           <div
             style={{
@@ -37,9 +40,18 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              Written by <strong>{author}</strong> who Jr Web FrontEnd Developer
-            </p>
+            <div
+              style={{
+                display: `flex`,
+                flexDirection: `column`
+              }}>
+              <p style={headerTextStyle}>
+                Written by <strong>{author}</strong>
+              </p>
+              <p style={headerTextStyle}>
+                Jr Web FrontEnd Developer <small>#game #web #cat 🥰</small>
+              </p>
+            </div>
           </div>
         )
       }}
@@ -49,7 +61,7 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/profile.jpeg/" }) {
       childImageSharp {
         fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
