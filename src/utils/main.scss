@@ -1,0 +1,26 @@
+.section__post {
+    h1 {
+        color: #748ffc;
+    }
+
+    a {
+        color: #FFF;
+        background-color: #ffd43b;
+
+        &:hover {
+            color: #fff;
+            background: #748ffc;
+        }
+    }
+}
+
+.section__main {
+    h3 {
+        a {
+            color: #343a40;
+            &:hover {
+                color: #748ffc;
+            }
+        }
+    }
+}
