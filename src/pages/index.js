@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import "../utils/main.scss";
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,7 +23,9 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div
+              className={`section__main`}
+              key={node.fields.slug}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -32,7 +35,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small># {node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
