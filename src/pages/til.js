@@ -17,7 +17,7 @@ class TilIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`, `TIL`]}
         />
         <div>
-          TIL
+          준비중
         </div>
         <Bio />
       </Layout>
