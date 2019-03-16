@@ -4,6 +4,10 @@ footer{
 
 a{
     text-decoration: none;
+    color: #343a40;
+    &:hover {
+        color: #748ffc;
+    }
 }
 
 .section__header {
@@ -32,13 +36,6 @@ a{
             &:last-child {
                 margin: 0;
             }
-
-            a {
-                color: #343a40;
-                &:hover {
-                    color: #748ffc;
-                }
-            }
         }
     }
 }
@@ -60,15 +57,6 @@ a{
 }
 
 .section__main {
-    h3 {
-        a {
-            color: #343a40;
-            &:hover {
-                color: #748ffc;
-            }
-        }
-    }
-
     small {
         font-style: italic;
     }
