@@ -49,7 +49,7 @@ function Bio() {
                 Written by <strong>{author}</strong>
               </p>
               <p style={headerTextStyle}>
-                Jr Web FrontEnd Developer <small>#game #web #cat 🥰</small>
+                Jr Web FrontEnd Developer <small>#game #web #cat</small>
               </p>
             </div>
           </div>
