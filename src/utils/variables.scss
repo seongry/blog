@@ -46,12 +46,12 @@ a{
     }
 
     a {
-        color: #FFF;
-        background-color: #ffd43b;
+        border-bottom: 2px solid #ffd43b;
 
         &:hover {
             color: #fff;
             background: #748ffc;
+            border: 0;
         }
     }
 }
