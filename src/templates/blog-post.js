@@ -5,13 +5,19 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import '../utils/variables.scss';
+import "../utils/variables.scss"
+import { DiscussionEmbed } from "disqus-react"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const disqusShortname = 'raina'
+    const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title,
+    }
 
     return (
       <Layout
@@ -34,13 +40,13 @@ class BlogPostTemplate extends React.Component {
         </p>
         <div
           className={`section__post`}
-          dangerouslySetInnerHTML={{ __html: post.html }} />
+          dangerouslySetInnerHTML={{ __html: post.html }}/>
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <Bio/>
 
         <ul
           style={{
@@ -66,6 +72,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
     )
   }
