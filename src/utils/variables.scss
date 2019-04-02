@@ -68,6 +68,12 @@ a{
     }
 }
 
+.parse__subtitle{
+    span + span{
+        margin-left: 4px;
+    }
+}
+
 .section__main {
     small {
         font-style: italic;

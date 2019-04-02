@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    const disqusShortname = 'raina'
+    const disqusShortname = "raina"
     const disqusConfig = {
       identifier: post.id,
       title: post.frontmatter.title,
@@ -29,6 +29,7 @@ class BlogPostTemplate extends React.Component {
         />
         <h1>{post.frontmatter.title}</h1>
         <p
+          className="parse__subtitle"
           style={{
             ...scale(-1 / 5),
             display: `block`,
@@ -36,7 +37,8 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          <span className="material-icons" style={{ ...scale(-1 / 5)}}>calendar_today</span>
+          <span>{post.frontmatter.date}</span>
         </p>
         <div
           className={`section__post`}
@@ -72,7 +74,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
       </Layout>
     )
   }

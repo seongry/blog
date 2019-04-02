@@ -124,7 +124,6 @@ class Layout extends React.Component {
         <main>{children}</main>
         <footer>
           raina + gatsby
-          <i></i>
         </footer>
       </div>
     )
