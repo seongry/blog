@@ -4,14 +4,41 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {}
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  handleScroll() {
+    this.setState({ scroll: window.scrollY })
+  }
+
+  componentDidMount() {
+    const header = document.querySelector("header")
+    this.setState({ top: header.offsetTop, height: header.offsetHeight })
+    window.addEventListener("scroll", this.handleScroll, true)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
+    let headerStyle = { width: rhythm(36)}
+    let headerClass
     let header
+    if (this.state.scroll > this.state.top) {
+      headerStyle.paddingTop = `${rhythm(1.5)}`;
+      headerClass = "section__header--fixed";
+    }
 
     if (location.pathname === rootPath) {
       header = (
-        <header className={`section__header`}>
+        <header className={`section__header ${headerClass}`} style={headerStyle}>
           <div>
             <h1
               style={{
@@ -36,12 +63,12 @@ class Layout extends React.Component {
             <ul>
               <li>
                 <Link to={`/til`}>
-                  TIL
+                  TAG
                 </Link>
               </li>
               <li>
                 <Link to={`/til`}>
-                  portfolio
+                  CATEGORY
                 </Link>
               </li>
             </ul>
@@ -50,7 +77,7 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <header className={`section__header`}>
+        <header className={`section__header ${headerClass}`} style={headerStyle}>
           <h3
             style={{
               marginTop: 0,
@@ -67,6 +94,20 @@ class Layout extends React.Component {
               {title}✨
             </Link>
           </h3>
+          <div>
+            <ul>
+              <li>
+                <Link to={`/til`}>
+                  TAG
+                </Link>
+              </li>
+              <li>
+                <Link to={`/til`}>
+                  CATEGORY
+                </Link>
+              </li>
+            </ul>
+          </div>
         </header>
       )
     }
@@ -75,14 +116,15 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          maxWidth: rhythm(36),
+          padding: `${rhythm(1.5)} 0`,
         }}
       >
         {header}
         <main>{children}</main>
         <footer>
           raina + gatsby
+          <i></i>
         </footer>
       </div>
     )
