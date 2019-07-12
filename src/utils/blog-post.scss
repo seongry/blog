@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 2.5rem;
+  padding: 2.5rem 0;
   margin: 0;
 
   @media screen and (max-width: 768px) {
@@ -52,6 +52,13 @@
       border: 0;
     }
   }
+
+  blockquote {
+    border-left: 4px solid $main-yellow;
+    margin: 0;
+    padding: 0 1.666rem;
+    color: #676767;
+  }
 }
 
 .parse__subtitle {
@@ -61,8 +68,6 @@
 }
 
 .section__main {
-  width: 80%;
-
   small {
     font-style: italic;
   }

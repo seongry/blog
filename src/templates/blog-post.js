@@ -54,7 +54,8 @@ class BlogPostTemplate extends React.Component {
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                이전글
+                {previous.frontmatter.title}
               </Link>
             )}
           </li>
