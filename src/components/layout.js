@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm } from "../utils/typography"
 import ProfileMain from "./profile-main";
 
 class Layout extends React.Component {
