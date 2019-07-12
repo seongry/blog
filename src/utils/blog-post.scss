@@ -1,0 +1,73 @@
+@import "./colors";
+
+.intro__main {
+  width: 100%;
+  padding: 2.5rem 20rem;
+
+  @media screen and (max-width: 768px) {
+    padding: .8rem;
+  }
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 2.5rem;
+  margin: 0;
+
+  @media screen and (max-width: 768px) {
+    padding: .8rem;
+  }
+}
+
+.section__post {
+  h1, h2, h3 {
+    margin-top: 1em;
+    padding: .3em;
+    border-bottom: 1px solid $secondary-border-color;
+  }
+
+  p {
+    margin-bottom: 0.8125rem;
+
+    .language-text {
+      background-color: #e5a3b1;
+      color: #e55475;
+      padding: .3em;
+      text-shadow: none;
+
+    }
+  }
+
+  a {
+    border-bottom: 2px solid $main-yellow;
+
+    &:hover {
+      color: #fff;
+      background: $main-yellow;
+      border: 0;
+    }
+  }
+}
+
+.parse__subtitle {
+  span + span {
+    margin-left: 4px;
+  }
+}
+
+.section__main {
+  width: 80%;
+
+  small {
+    font-style: italic;
+  }
+}
+
+#disqus_thread {
+  width: 100%;
+}
