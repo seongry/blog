@@ -1,81 +1,98 @@
-footer{
-    text-align: center;
+@import "./colors";
+@import "./blog-post";
+
+* {
+  box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
-    color: #343a40;
-    &:hover {
-        color: #748ffc;
-    }
+html, body, #___gatsby {
+  width: 100%;
+  height: 100%;
+
+  div[role="group"] {
+    height: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #343a40;
+
+  &:hover {
+    color: $main-purple;
+  }
+}
+
+::-moz-selection {
+  background: $main-purple;
+  color: #fff;
+}
+
+::selection {
+  background: $main-purple;
+  color: #fff;
 }
 
 .section__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #FFF;
+  padding-left: 8px;
+  padding-right: 8px;
+  min-height: 3.6rem;
+
+  &.main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background: #FFF;
-    padding-left: 8px;
-    padding-right: 8px;
+    justify-content: flex-start;
+    font-weight: 900;
 
-    h1,h3 {
-        font-weight: 900;
-    }
+    .title {
+      text-align: left;
 
-    ul {
-        list-style: none;
-        padding: 0;
+      p {
+        margin: 0;
+      }
+
+      .post-section {
+        flex-grow: 1;
+      }
+
+      @media screen and (min-width: 769px) {
+        width: 100%;
         display: flex;
         flex-direction: row;
-        font-weight: bold;
+        justify-content: center;
 
-        li {
-            margin-bottom: 0;
-            margin-right: 8px;
-
-            &:before {
-                content: '';
-                margin-right: 4px;
-            }
-
-            &:last-child {
-                margin: 0;
-            }
+        p + p {
+          margin-left: 8px;
         }
-    }
 
-    &.section__header--fixed {
-        position: fixed;
-        top: 0;
-        box-shadow: 0px 14px 20px -10px #e5e5e5;
-        z-index: 1;
-    }
-}
-
-.section__post {
-    h1 {
-        color: #748ffc;
-    }
-
-    a {
-        border-bottom: 2px solid #ffd43b;
-
-        &:hover {
-            color: #fff;
-            background: #ffd43b;
-            border: 0;
+        a {
+          display: flex;
+          flex-direction: row;
         }
+      }
     }
-}
+  }
 
-.parse__subtitle{
-    span + span{
-        margin-left: 4px;
-    }
-}
+  &.post {
+    border-bottom: 1px solid $border-color;
+    font-weight: 900;
+    font-size: 20px;
+    height: 3.6rem;
+  }
 
-.section__main {
-    small {
-        font-style: italic;
-    }
+  &.section__header--fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
 }

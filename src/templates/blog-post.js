@@ -50,15 +50,7 @@ class BlogPostTemplate extends React.Component {
         />
         <Bio/>
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <ul className='pagination'>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">

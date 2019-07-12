@@ -22,53 +22,24 @@ class Layout extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll)
   }
 
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let headerStyle = { width: rhythm(36)}
-    let headerClass
+    const fixed = (this.state.scroll > this.state.top) ?
+      "section__header--fixed" : ""
     let header
-    if (this.state.scroll > this.state.top) {
-      headerStyle.paddingTop = `${rhythm(1.5)}`;
-      headerClass = "section__header--fixed";
-    }
 
     if (location.pathname === rootPath) {
       header = (
-        <header className={`section__header ${headerClass}`} style={headerStyle}>
-          <div>
-            <h1
-              style={{
-                ...scale(1.5),
-                marginBottom: rhythm(1.5),
-                marginTop: 0,
-              }}
-            >
-              <Link
-                style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`,
-                }}
-                to={`/`}
-              >
-                {title}✨
-              </Link>
-            </h1>
-          </div>
-        </header>
-      )
-    } else {
-      header = (
-        <header className={`section__header ${headerClass}`} style={headerStyle}>
-          <h3
-            style={{
-              marginTop: 0,
-            }}
-          >
+        <header className={`section__header main`}>
+          <div className={"title"}
+               style={{
+                 ...scale(1.5),
+                 padding: `${rhythm(.8)}`,
+               }}>
             <Link
               style={{
                 boxShadow: `none`,
@@ -77,25 +48,46 @@ class Layout extends React.Component {
               }}
               to={`/`}
             >
-              {title}✨
+              <p>나 같은</p>
+              <p>사람을 위한</p>
+              <p>개발로그</p>
             </Link>
-          </h3>
+          </div>
+        </header>
+      )
+    } else {
+      header = (
+        <header className={`section__header post ${fixed}`}
+                style={{
+                  padding: `${rhythm(.5)}`,
+                }}>
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
         </header>
       )
     }
     return (
       <div
         style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(36),
-          padding: `${rhythm(1.5)} 0`,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         {header}
-        <main>{children}</main>
+        <main className='intro__main'>
+          {children}
+        </main>
         <footer>
-          raina + gatsby
+          ©raina, Built with Gatsby-blog-starter
         </footer>
       </div>
     )
