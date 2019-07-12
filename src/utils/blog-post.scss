@@ -16,11 +16,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 2.5rem 0;
+  padding: 5rem 0 2.5rem 0;
   margin: 0;
 
   @media screen and (max-width: 768px) {
-    padding: .8rem;
+    padding: 4rem .8rem .8rem .8rem;
     justify-content: center;
   }
 
