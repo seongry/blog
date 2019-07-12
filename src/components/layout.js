@@ -59,20 +59,6 @@ class Layout extends React.Component {
               </Link>
             </h1>
           </div>
-          <div>
-            <ul>
-              <li>
-                <Link to={`/til`}>
-                  TAG
-                </Link>
-              </li>
-              <li>
-                <Link to={`/til`}>
-                  CATEGORY
-                </Link>
-              </li>
-            </ul>
-          </div>
         </header>
       )
     } else {
@@ -94,20 +80,6 @@ class Layout extends React.Component {
               {title}✨
             </Link>
           </h3>
-          <div>
-            <ul>
-              <li>
-                <Link to={`/til`}>
-                  TAG
-                </Link>
-              </li>
-              <li>
-                <Link to={`/til`}>
-                  CATEGORY
-                </Link>
-              </li>
-            </ul>
-          </div>
         </header>
       )
     }

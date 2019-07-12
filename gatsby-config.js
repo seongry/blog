@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Raina's log`,
+    title: `나같은 사람을 위한 개발로그`,
     author: `SeongRyeong Kim`,
     description: `A log about Web development written by raina`,
     siteUrl: `https://raina94.github.io/`,

@@ -46,10 +46,10 @@ function Bio() {
                 flexDirection: `column`
               }}>
               <p style={headerTextStyle}>
-                Written by <strong>{author}</strong>
+                <strong>{author}</strong>
               </p>
               <p style={headerTextStyle}>
-                Jr Web FrontEnd Developer <small>#game #web #cat</small>
+                개발문서 읽는 게 즐거운 프런트 엔드 개발자입니다. 부담없이 배운 내용을 나와 같은 사람들에게 공유하고 싶어서 블로그를 꾸려봤습니다.
               </p>
             </div>
           </div>
