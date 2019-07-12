@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `나같은 사람을 위한 개발로그`,
+    title: `나 같은 사람을 위한 개발로그`,
     author: `SeongRyeong Kim`,
     description: `A log about Web development written by raina`,
     siteUrl: `https://raina94.github.io/`,
@@ -18,13 +18,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/til`,
-        name: `til`,
       },
     },
     {
