@@ -54,15 +54,20 @@ class BlogPostTemplate extends React.Component {
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                이전글
-                {previous.frontmatter.title}
+                <div className='pagination-button'>
+                  <span className="material-icons" >navigate_before</span>
+                  <span className="title">{previous.frontmatter.title}</span>
+                </div>
               </Link>
             )}
           </li>
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                <div className="pagination-button">
+                  <span className="title">{next.frontmatter.title}</span>
+                  <span className="material-icons">navigate_next</span>
+                </div>
               </Link>
             )}
           </li>
