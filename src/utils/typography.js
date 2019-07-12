@@ -5,9 +5,9 @@ const typography = new Typography({
   baseFontSize: '16px',
   baseLineHeight: 1.666,
   headerFontFamily: [
-    'Nanum Myeongjo'
+    'Nanum Gothic'
   ],
-  bodyFontFamily: ['Nanum Gothic Coding'],
+  bodyFontFamily: ['Nanum Gothic'],
 })
 
 
