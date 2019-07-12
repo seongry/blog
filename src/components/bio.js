@@ -16,15 +16,12 @@ function Bio() {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author } = data.site.siteMetadata;
-        const headerTextStyle = {
-          margin: 0
-        };
+        const { author } = data.site.siteMetadata
         return (
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
+              marginBottom: rhythm(2),
             }}
           >
             <Image
@@ -32,8 +29,8 @@ function Bio() {
               alt={author}
               style={{
                 marginRight: rhythm(1 / 2),
-                marginBottom: 'auto',
-                marginTop: 'auto',
+                marginBottom: "auto",
+                marginTop: "auto",
                 minWidth: 50,
                 borderRadius: `100%`,
               }}
@@ -44,12 +41,18 @@ function Bio() {
             <div
               style={{
                 display: `flex`,
-                flexDirection: `column`
+                flexDirection: `column`,
               }}>
-              <p style={headerTextStyle}>
-                <strong>{author}</strong>
+              <p style={{
+                margin: 0,
+                fontWeight: 900,
+                fontSize: '1.3rem'
+              }}>
+                {author}
               </p>
-              <p style={headerTextStyle}>
+              <p style={{
+                margin: 0,
+              }}>
                 개발문서 읽는 게 즐거운 프런트 엔드 개발자입니다.
                 배운 내용을 나와 같은 사람들에게 공유하고 싶어서 블로그를 꾸려봤습니다.
               </p>
