@@ -23,7 +23,6 @@ function Bio() {
         return (
           <div
             style={{
-              width : '80%',
               display: `flex`,
               marginBottom: rhythm(2.5),
             }}
@@ -33,7 +32,8 @@ function Bio() {
               alt={author}
               style={{
                 marginRight: rhythm(1 / 2),
-                marginBottom: 0,
+                marginBottom: 'auto',
+                marginTop: 'auto',
                 minWidth: 50,
                 borderRadius: `100%`,
               }}

@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+import ProfileMain from "./profile-main";
 
 class Layout extends React.Component {
   constructor(props) {
@@ -33,28 +34,7 @@ class Layout extends React.Component {
     let header
 
     if (location.pathname === rootPath) {
-      header = (
-        <header className={`section__header main`}>
-          <div className={"title"}
-               style={{
-                 ...scale(1.5),
-                 padding: `${rhythm(.8)}`,
-               }}>
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              <p>나 같은</p>
-              <p>사람을 위한</p>
-              <p>개발로그</p>
-            </Link>
-          </div>
-        </header>
-      )
+      header = ProfileMain();
     } else {
       header = (
         <header className={`section__header post ${fixed}`}
@@ -78,8 +58,6 @@ class Layout extends React.Component {
       <div
         style={{
           height: "100%",
-          display: "flex",
-          flexDirection: "column",
         }}
       >
         {header}
