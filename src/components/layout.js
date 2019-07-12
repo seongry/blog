@@ -37,10 +37,7 @@ class Layout extends React.Component {
       header = ProfileMain();
     } else {
       header = (
-        <header className={`section__header post ${fixed}`}
-                style={{
-                  padding: `${rhythm(.5)}`,
-                }}>
+        <header className={`section__header post ${fixed}`}>
           <Link
             style={{
               boxShadow: `none`,
