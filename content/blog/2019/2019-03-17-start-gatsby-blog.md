@@ -9,7 +9,6 @@ tags:
 ![dance](https://l56spuxk1t14k3seci6s2bja-wpengine.netdna-ssl.com/wp-content/uploads/GIF/2014/12/-Cookie-Monster-Dance-GIF-2015.gif)
 
 우여곡절 끝에 드디어 블로그가 완성되었다.😂😂
-
 개발자가 되고 나서 많은 정보를 얻어가던 곳이 개인이 운영하는 블로그이기도해서 나도 이런 블로그를 운영 해보고 싶다하는 생각이 항상 있었다.
 
 아직 1차로 오픈했을 뿐이고.. 다듬고 추가할 부분도 아직 많이 남아 있지만
@@ -20,7 +19,6 @@ tags:
 
 ## 1. 왜 Gatsby 인가?
 사실 블로그를 만들려고 시도한 적이 이번이 처음은 아니다.
-
 이 블로그가 완성되기전까지 맘에 쏙 드는 블로그를 얼마나 찾아다녔었는지...
 
 ### 목표
@@ -75,14 +73,11 @@ gatsby develop
 ### 2.3 github pages로 배포하기
 
 나는 깃헙페이지를 이용해서 배포하는 방식을 이용중이라 해당 방법에 대해 설명한다.
-
 우선 깃헙에서 ```[자신의 깃헙 id].github.io``` 으로 새 저장소를 만든다.
-
 그리고 gh-pages을 개발모드로 설치해준다
 ```bash
 npm install --save --dev gh-pages
 ```
-
 그다음 ```package.json``` 파일에 스크립트를 추가한다
 ```bash
 "deploy": "gatsby build && gh-pages -d public -b master -r [내 깃헙 주소]"
@@ -96,15 +91,12 @@ function foo() {
 }
 ```
 이런 깔끔한 코드 스타일을 추가 하기 위해선 몇가지 작업이 필요하다.
-
 바로 [prismjs](https://prismjs.com/) ! 공식 홈페이지에 여러 테마도 있지만 나는 **OKADIA** 테마를 선택했다. 이유는 그냥 내가 주로 보는 코드 색과 제일 비슷해서😊
-
 적용하기 위해선 우선 gatsby 플러그인을 설치해야한다.
 ```bash
 npm install --save gatsby-transformer-remark gatsby-remark-prismjs prismjs
 ```
 혹시 내가 적어둔 starter 팩을 사용하시는 분이라면 이미 해당 플러그인이 설치되어 있으므로 넘어가셔도 좋다!
-
 그다음 개츠비 환경설정 파일인 ```gatsby-config.js``` 에 플러그인을 추가해준다.
 ```javascript
 plugins: [
