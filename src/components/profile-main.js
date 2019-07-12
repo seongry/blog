@@ -1,5 +1,5 @@
 import React from 'react';
-import { rhythm, scale } from "../utils/typography"
+import { scale } from "../utils/typography"
 import { Link } from "gatsby"
 import Bio from "./bio"
 
