@@ -19,7 +19,7 @@ footer {
   padding: 1.5rem;
 }
 
-a {
+a:not(.gatsby-resp-image-link) {
   text-decoration: none;
   color: #343a40;
 
