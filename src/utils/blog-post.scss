@@ -5,7 +5,7 @@
   padding: 2.5rem 20rem 0 20rem;
 
   @media screen and (max-width: 768px) {
-    padding: 2.5rem .8rem 0 .8rem;
+    padding: 2.5rem 0.8rem 0 0.8rem;
   }
 }
 
@@ -20,37 +20,42 @@
   margin: 0;
 
   @media screen and (max-width: 768px) {
-    padding: 4rem .8rem .8rem .8rem;
+    padding: 4rem 0.8rem 0.8rem 0.8rem;
     justify-content: center;
   }
 
   .pagination-button {
     display: flex;
     border-radius: 4em;
-    padding: .4rem 1.5rem;
-    border:  solid transparent;
-    background: linear-gradient( 135deg, #b55af3 10%, #9c68f9 100%);
-    box-shadow:inset 0 0 0 100px white;
+    padding: 0.4rem 1.5rem;
+    border: solid transparent;
+    background: linear-gradient(135deg, #b55af3 10%, #9c68f9 100%);
+    box-shadow: inset 0 0 0 100px white;
 
     &:hover {
       box-shadow: none;
-      color: #FFFFFF;
+      color: #ffffff;
     }
 
     .title {
       max-width: 20rem;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      word-wrap:normal;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
       overflow: hidden;
     }
   }
 }
 
 .section__post {
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     margin-top: 1em;
-    padding: .3em;
+    padding: 0.3em 0;
+  }
+
+  h1 {
     border-bottom: 1px solid $secondary-border-color;
   }
 
@@ -60,9 +65,8 @@
     .language-text {
       background-color: #ffdeeb;
       color: #e55475;
-      padding: .3em;
+      padding: 0.3em;
       text-shadow: none;
-
     }
   }
 
@@ -85,6 +89,10 @@
     margin: 0;
     padding: 0 1.666rem;
     color: #676767;
+  }
+
+  hr {
+    background: $secondary-border-color;
   }
 }
 
