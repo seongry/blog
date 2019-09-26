@@ -4,6 +4,10 @@
   width: 100%;
   padding: 2.5rem 20rem 0 20rem;
 
+  @media screen and (max-width: 1300px) {
+    padding: 2.5rem 10rem 0 10rem;
+  }
+
   @media screen and (max-width: 768px) {
     padding: 2.5rem 0.8rem 0 0.8rem;
   }

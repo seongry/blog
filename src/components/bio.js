@@ -41,19 +41,24 @@ function Bio() {
               style={{
                 display: `flex`,
                 flexDirection: `column`,
-              }}>
-              <p style={{
-                margin: 0,
-                fontWeight: 900,
-                fontSize: '1.3rem'
-              }}>
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontWeight: 900,
+                  fontSize: "1.3rem",
+                }}
+              >
                 {author}
               </p>
-              <p style={{
-                margin: 0,
-              }}>
-                개발문서 읽는 게 즐거운 프런트 엔드 개발자입니다.
-                배운 내용을 나와 같은 사람들에게 공유하고 싶어서 블로그를 꾸려봤습니다.
+              <p
+                style={{
+                  margin: 0,
+                }}
+              >
+                개발문서 읽는 게 즐거운 프런트 엔드 개발자입니다. 누군가에게
+                도움이 되길 믿으며 기록을 남깁니다.
               </p>
             </div>
           </div>
