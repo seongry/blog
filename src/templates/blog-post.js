@@ -1,23 +1,27 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import { Layout } from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
-import "../utils/variables.scss"
-import { DiscussionEmbed } from "disqus-react"
+import { Bio } from "../components/bio";
+import { Layout } from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm, scale } from "../utils/typography";
+import "../utils/variables.scss";
+import { DiscussionEmbed } from "disqus-react";
+import styled from "styled-components";
 
+const Title = styled.h1`
+  margin-top: 2.5rem;
+`;
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-    const disqusShortname = "raina"
+    const post = this.props.data.markdownRemark;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
+    const disqusShortname = "raina";
     const disqusConfig = {
       identifier: post.id,
       title: post.frontmatter.title,
-    }
+    };
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -25,7 +29,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <Title>{post.frontmatter.title}</Title>
         <p
           className="parse__subtitle"
           style={{
@@ -75,11 +79,11 @@ class BlogPostTemplate extends React.Component {
         </ul>
         <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -99,4 +103,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

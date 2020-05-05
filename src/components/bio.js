@@ -5,24 +5,41 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../utils/typography";
+import styled from "styled-components";
 
-function Bio() {
+const Layout = styled.div`
+  display: flex;
+  padding: 2.5rem 16px;
+`;
+const Description = styled.div`
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+`;
+const Author = styled.div``;
+const Nickname = styled.p`
+  display: inline;
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.3rem;
+`;
+const SelfProduce = styled.p`
+  margin: 0;
+`;
+
+export const Bio = () => {
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author } = data.site.siteMetadata
+        const { author } = data.site.siteMetadata;
         return (
-          <div
-            style={{
-              display: `flex`,
-            }}
-          >
+          <Layout>
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
@@ -37,36 +54,18 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <div
-              style={{
-                display: `flex`,
-                flexDirection: `column`,
-              }}
-            >
-              <p
-                style={{
-                  margin: 0,
-                  fontWeight: 900,
-                  fontSize: "1.3rem",
-                }}
-              >
-                {author}
-              </p>
-              <p
-                style={{
-                  margin: 0,
-                }}
-              >
-                개발문서 읽는 게 즐거운 프런트 엔드 개발자입니다. 누군가에게
-                도움이 되길 믿으며 기록을 남깁니다.
-              </p>
-            </div>
-          </div>
-        )
+            <Description>
+              <Author>
+                <Nickname>KOAL</Nickname> ({author})
+              </Author>
+              <SelfProduce>#Web #FrontEnd Still Learn 👩‍💻</SelfProduce>
+            </Description>
+          </Layout>
+        );
       }}
     />
-  )
-}
+  );
+};
 
 const bioQuery = graphql`
   query BioQuery {
@@ -83,6 +82,4 @@ const bioQuery = graphql`
       }
     }
   }
-`
-
-export default Bio
+`;
