@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://raina94.github.io/`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
