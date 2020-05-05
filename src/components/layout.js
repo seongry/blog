@@ -1,25 +1,29 @@
 import React from "react"
 import { Header } from "./Header"
+import styled from "styled-components"
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
+const StyledLayout = styled.div`
+  height: 100%;
+`
+const Main = styled.main`
+  width: 100%;
+  padding: 2.5rem 20rem 0 20rem;
+
+  @media screen and (max-width: 1300px) {
+    padding: 2.5rem 10rem 0 10rem;
   }
 
-  render() {
-    const { children } = this.props
-    return (
-      <div
-        style={{
-          height: "100%",
-        }}
-      >
-        <Header />
-        <main className="intro__main">{children}</main>
-        <footer>©raina, Built with Gatsby-blog-starter</footer>
-      </div>
-    )
+  @media screen and (max-width: 768px) {
+    padding: 2.5rem 0.8rem 0 0.8rem;
   }
+`
+
+export const Layout = ({ children }) => {
+  return (
+    <StyledLayout>
+      <Header />
+      <Main>{children}</Main>
+      <footer>©raina, Built with Gatsby-blog-starter</footer>
+    </StyledLayout>
+  )
 }
-
-export default Layout

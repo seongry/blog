@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import { Layout } from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import "../utils/variables.scss"
@@ -20,9 +20,7 @@ class BlogPostTemplate extends React.Component {
     }
 
     return (
-      <Layout
-        location={this.props.location}
-        title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -37,25 +35,28 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          <span className="material-icons" style={{ ...scale(-1 / 5)}}>calendar_today</span>
+          <span className="material-icons" style={{ ...scale(-1 / 5) }}>
+            calendar_today
+          </span>
           <span>{post.frontmatter.date}</span>
         </p>
         <div
           className={`section__post`}
-          dangerouslySetInnerHTML={{ __html: post.html }}/>
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio/>
+        <Bio />
 
-        <ul className='pagination'>
+        <ul className="pagination">
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                <div className='pagination-button'>
-                  <span className="material-icons" >navigate_before</span>
+                <div className="pagination-button">
+                  <span className="material-icons">navigate_before</span>
                   <span className="title">{previous.frontmatter.title}</span>
                 </div>
               </Link>
@@ -72,7 +73,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
     )
   }
