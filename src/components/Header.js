@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
   top: 0;
   background: #ffffff;
   z-index: 99;
+  border-bottom: 1px solid #ddd;
 
   a {
     :hover {
