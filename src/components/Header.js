@@ -15,11 +15,11 @@ const StyledHeader = styled.header`
   top: 0;
   background: #ffffff;
   z-index: 99;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray1};
 
   a {
     :hover {
-      color: #9332fd;
+      color: ${({ theme }) => theme.colors.purple};
     }
   }
 `;

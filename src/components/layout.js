@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "./Header";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../utils/theme";
+import { GlobalStyles } from "./GlobalStyles";
 
 const StyledLayout = styled.div`
   height: 100%;
@@ -19,14 +20,20 @@ const Main = styled.main`
   }
 `;
 
+const Footer = styled.footer`
+  text-align: center;
+  padding: 1.5rem;
+`;
+
 export const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <StyledLayout>
         <Header />
         <Main>{children}</Main>
-        <footer>©raina, Built with Gatsby-blog-starter</footer>
+        <Footer>©koal, Built with Gatsby-blog-starter</Footer>
       </StyledLayout>
+      <GlobalStyles />
     </ThemeProvider>
   );
 };

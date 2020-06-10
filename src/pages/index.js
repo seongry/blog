@@ -4,8 +4,18 @@ import { Link, graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import SEO from "../components/Seo";
 import { rhythm, scale } from "../utils/typography";
-import "../utils/variables.scss";
 import { Bio } from "../components/Bio";
+import styled from "styled-components";
+
+const PostList = styled.section`
+  flex-grow: 1;
+`;
+
+const Post = styled.article`
+  small {
+    font-style: italic;
+  }
+`;
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,7 +30,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
-        <div className="post-section">
+        <PostList>
           {posts.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
@@ -29,7 +39,7 @@ class BlogIndex extends React.Component {
                 style={{ boxShadow: `none` }}
                 to={node.fields.slug}
               >
-                <div className={`section__main`} key={node.fields.slug}>
+                <Post key={node.fields.slug}>
                   <h3
                     style={{
                       marginBottom: rhythm(1 / 4),
@@ -55,11 +65,11 @@ class BlogIndex extends React.Component {
                       __html: node.frontmatter.description || node.excerpt,
                     }}
                   />
-                </div>
+                </Post>
               </Link>
             );
           })}
-        </div>
+        </PostList>
       </Layout>
     );
   }
