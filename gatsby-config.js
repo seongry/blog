@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `코알 데브 로그`,
     author: `SeongRyeong Kim`,
-    description: `A log all about study written by raina`,
+    description: `A log all about study written by koal`,
     siteUrl: `https://raina94.github.io/`,
   },
   plugins: [
@@ -63,8 +63,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `raina's log`,
-        short_name: `myLog`,
+        name: `koal's dev log`,
+        short_name: `KoalLog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#748ffc`,
@@ -97,4 +97,4 @@ module.exports = {
       },
     },
   ],
-}
+};
