@@ -1,23 +1,76 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import { Bio } from "../components/bio";
-import { Layout } from "../components/layout";
+import { Layout } from "../components/Layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
-import "../utils/variables.scss";
 import { DiscussionEmbed } from "disqus-react";
 import styled from "styled-components";
+import { Pagination } from "../components/Pagination";
 
 const Title = styled.h1`
   margin-top: 2.5rem;
+`;
+const SubTitle = styled.p`
+  span + span {
+    margin-left: 4px;
+  }
+`;
+const Post = styled.section`
+  h1,
+  h2,
+  h3 {
+    margin-top: 1em;
+    padding: 0.3em 0;
+  }
+
+  p {
+    margin-bottom: 0.8125rem;
+
+    .language-text {
+      background-color: #ffdeeb;
+      color: #e55475;
+      padding: 0.3em;
+      text-shadow: none;
+    }
+  }
+
+  a:not(.gatsby-resp-image-link) {
+    border-bottom: 2px solid ${({ theme }) => theme.colors.yellow};
+
+    :hover {
+      color: #fff;
+      background: ${({ theme }) => theme.colors.yellow};
+      border: 0;
+    }
+  }
+
+  .gatsby-resp-image-link {
+    padding: 1rem;
+  }
+
+  blockquote {
+    border-left: 4px solid ${({ theme }) => theme.colors.gray1};
+    margin: 0;
+    padding: 0 1.666rem;
+    color: #676767;
+  }
+
+  hr {
+    background: ${({ theme }) => theme.colors.gray2};
+  }
+`;
+
+const StyledDiscussionEmbed = styled(DiscussionEmbed)`
+  width: 100%;
 `;
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
-    const disqusShortname = "raina";
+    const disqusShortname = "koal";
     const disqusConfig = {
       identifier: post.id,
       title: post.frontmatter.title,
@@ -30,11 +83,9 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <Title>{post.frontmatter.title}</Title>
-        <p
-          className="parse__subtitle"
+        <SubTitle
           style={{
             ...scale(-1 / 5),
-            display: `block`,
             marginBottom: rhythm(1),
             marginTop: rhythm(-1),
           }}
@@ -43,41 +94,20 @@ class BlogPostTemplate extends React.Component {
             calendar_today
           </span>
           <span>{post.frontmatter.date}</span>
-        </p>
-        <div
-          className={`section__post`}
+        </SubTitle>
+        <Post
           dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-        <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
         <Bio />
 
-        <ul className="pagination">
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                <div className="pagination-button">
-                  <span className="material-icons">navigate_before</span>
-                  <span className="title">{previous.frontmatter.title}</span>
-                </div>
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                <div className="pagination-button">
-                  <span className="title">{next.frontmatter.title}</span>
-                  <span className="material-icons">navigate_next</span>
-                </div>
-              </Link>
-            )}
-          </li>
-        </ul>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        <Pagination previous={previous} next={next} />
+        <StyledDiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
       </Layout>
     );
   }
