@@ -21,10 +21,14 @@ class BlogIndex extends React.Component {
         />
         <Bio />
         <div className="post-section">
-          {posts.map(({ node }) => {
+          {posts.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <Link
+                key={index}
+                style={{ boxShadow: `none` }}
+                to={node.fields.slug}
+              >
                 <div className={`section__main`} key={node.fields.slug}>
                   <h3
                     style={{
