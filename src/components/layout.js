@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "./Header";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "../utils/theme";
 
 const StyledLayout = styled.div`
   height: 100%;
@@ -20,10 +21,12 @@ const Main = styled.main`
 
 export const Layout = ({ children }) => {
   return (
-    <StyledLayout>
-      <Header />
-      <Main>{children}</Main>
-      <footer>©raina, Built with Gatsby-blog-starter</footer>
-    </StyledLayout>
+    <ThemeProvider theme={theme}>
+      <StyledLayout>
+        <Header />
+        <Main>{children}</Main>
+        <footer>©raina, Built with Gatsby-blog-starter</footer>
+      </StyledLayout>
+    </ThemeProvider>
   );
 };
