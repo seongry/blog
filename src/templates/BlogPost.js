@@ -8,6 +8,7 @@ import { rhythm, scale } from "../utils/typography";
 import { DiscussionEmbed } from "disqus-react";
 import styled from "styled-components";
 import { Pagination } from "../components/Pagination";
+import { TagList } from "../components/TagList";
 
 const Title = styled.h1`
   margin-top: 2.5rem;
@@ -69,6 +70,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
+    const tags = this.props.data.markdownRemark.frontmatter.tags;
     const { previous, next } = this.props.pageContext;
     const disqusShortname = "koal";
     const disqusConfig = {
@@ -94,6 +96,7 @@ class BlogPostTemplate extends React.Component {
             calendar_today
           </span>
           <span>{post.frontmatter.date}</span>
+          <TagList tags={tags} />
         </SubTitle>
         <Post
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -130,6 +133,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }
