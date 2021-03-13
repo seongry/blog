@@ -2,7 +2,7 @@
 title: [자료구조] Queue
 date: 2021-03-08
 tags:
-  - data structure
+  - 자료구조
   - algorithm
   - javascript
 ---

@@ -2,7 +2,7 @@
 title: [자료구조] Stack
 date: 2021-03-10
 tags:
-  - data structure
+  - 자료구조
   - algorithm
   - javascript
 ---

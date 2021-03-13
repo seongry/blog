@@ -2,7 +2,7 @@
 title: [자료구조] Linked list 01
 date: 2021-03-13
 tags:
-  - data structure
+  - 자료구조
   - algorithm
   - javascript
 ---
