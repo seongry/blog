@@ -1,5 +1,5 @@
 ---
-title: [자료구조] Queue
+title: "[자료구조] Queue"
 date: 2021-03-08
 tags:
   - 자료구조

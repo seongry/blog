@@ -1,5 +1,5 @@
 ---
-title: [자료구조] Stack
+title: "[자료구조] Stack"
 date: 2021-03-10
 tags:
   - 자료구조
