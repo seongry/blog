@@ -76,7 +76,6 @@ function getLastNode(node) {
 }
 class SimpleLinkedList {
   _head;
-  _next;
   _tail;
   _length;
   constructor(node) {

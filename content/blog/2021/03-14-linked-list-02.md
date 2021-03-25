@@ -41,7 +41,6 @@ class Node {
 // 저번에 만들었던 linked list 구현 재탕
 class LinkedList {
   _head;
-  _next;
   _tail;
   _length;
   constructor(node) {
