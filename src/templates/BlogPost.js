@@ -1,19 +1,18 @@
-import React from "react";
+import { DiscussionEmbed } from "disqus-react";
 import { graphql } from "gatsby";
-
+import React from "react";
+import styled from "styled-components";
 import { Bio } from "../components/Bio";
 import { Layout } from "../components/Layout";
-import SEO from "../components/Seo";
-import { rhythm, scale } from "../utils/typography";
-import { DiscussionEmbed } from "disqus-react";
-import styled from "styled-components";
 import { Pagination } from "../components/Pagination";
+import SEO from "../components/Seo";
 import { TagList } from "../components/TagList";
+import { rhythm, scale } from "../utils/typography";
 
 const Title = styled.h1`
   margin-top: 2.5rem;
 `;
-const SubTitle = styled.p`
+const SubTitle = styled.div`
   span + span {
     margin-left: 4px;
   }
