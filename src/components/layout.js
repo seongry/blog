@@ -17,11 +17,8 @@ const StyledLayout = styled.div`
 const Main = styled.main`
   font-family: "RIDIBatang";
   width: 100%;
-  padding: 0 20rem 0 20rem;
-
-  @media screen and (max-width: 1300px) {
-    padding: 0 10rem 0 10rem;
-  }
+  max-width: 800px;
+  margin: 0 auto;
 
   @media screen and (max-width: 768px) {
     padding: 0 0.8rem 0 0.8rem;
