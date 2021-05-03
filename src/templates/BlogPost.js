@@ -29,6 +29,7 @@ const Post = styled.section`
     margin-bottom: 0.8125rem;
 
     .language-text {
+      font-family: "RIDIBatang";
       background-color: #ffdeeb;
       color: #e55475;
       padding: 0.3em;
@@ -59,6 +60,10 @@ const Post = styled.section`
 
   hr {
     background: ${({ theme }) => theme.colors.gray2};
+  }
+
+  .language-javascript {
+    font-family: "Consolas";
   }
 `;
 

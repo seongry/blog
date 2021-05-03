@@ -1,20 +1,16 @@
-import Typography from "typography"
-
+import Typography from "typography";
 
 const typography = new Typography({
-  baseFontSize: '16px',
+  baseFontSize: "16px",
   baseLineHeight: 1.666,
-  headerFontFamily: [
-    'Nanum Gothic'
-  ],
-  bodyFontFamily: ['Nanum Gothic'],
-})
-
+  headerFontFamily: ["RIDIBatang"],
+  bodyFontFamily: ["RIDIBatang"],
+});
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles()
+  typography.injectStyles();
 }
 
-export const { scale, rhythm, options } = typography
-export default typography
+export const { scale, rhythm, options } = typography;
+export default typography;
