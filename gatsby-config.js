@@ -72,7 +72,6 @@ module.exports = {
         icon: `content/assets/koala-donut.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
