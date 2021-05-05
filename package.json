@@ -49,7 +49,7 @@
   ],
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/raina94/raina94.github.io",
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/seongry/seongry.github.io",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",

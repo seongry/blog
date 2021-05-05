@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -36,7 +36,7 @@ export const Header = () => {
       >
         코알 데브 로그
       </Link>
-      <a href="https://github.com/raina94">
+      <a href="https://github.com/seongry">
         <FontAwesomeIcon icon={faGithubAlt} />
       </a>
     </StyledHeader>

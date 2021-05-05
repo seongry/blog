@@ -3,7 +3,7 @@ module.exports = {
     title: `코알 데브 로그`,
     author: `SeongRyeong Kim`,
     description: `A log all about study written by koal`,
-    siteUrl: `https://raina94.github.io/`,
+    siteUrl: `https://seongry.github.io/`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -90,8 +90,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "http://raina94.github.io",
-        sitemap: "http://raina94.github.io/sitemap.xml",
+        host: "http://seongry.github.io",
+        sitemap: "http://seongry.github.io/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
