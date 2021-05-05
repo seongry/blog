@@ -12,6 +12,13 @@ const StyledLayout = styled.div`
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: "IBMPlexSansKR-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Bold.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
   height: 100%;
 `;
 const Main = styled.main`

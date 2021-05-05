@@ -10,6 +10,7 @@ import { TagList } from "../components/TagList";
 import { rhythm, scale } from "../utils/typography";
 
 const Title = styled.h1`
+  font-family: "IBMPlexSansKR-Bold";
   margin-top: 2.5rem;
 `;
 const SubTitle = styled.div`

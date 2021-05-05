@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-weight: 900;
+  font-family: "IBMPlexSansKR-Bold";
   font-size: 20px;
   padding: 0.833rem 1.2rem;
   position: sticky;
