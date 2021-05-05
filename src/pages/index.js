@@ -1,22 +1,33 @@
+import { graphql, Link } from "gatsby";
 import React from "react";
-import { Link, graphql } from "gatsby";
-
+import styled from "styled-components";
+import { Bio } from "../components/Bio";
 import { Layout } from "../components/Layout";
 import SEO from "../components/Seo";
-import { rhythm, scale } from "../utils/typography";
-import { Bio } from "../components/Bio";
-import styled from "styled-components";
+import { scale } from "../utils/typography";
 
 const PostList = styled.section`
   flex-grow: 1;
 `;
 
 const Post = styled.article`
-  small {
-    font-style: italic;
+  padding: 2rem 1rem;
+  p {
+    margin: 0;
   }
 `;
-
+const Title = styled.div`
+  margin-bottom: 0.5rem;
+`;
+const TitleText = styled.h3`
+  margin: 0;
+  display: inline-block;
+  font-family: "IBMPlexSansKR-Bold";
+`;
+const PostDate = styled.small`
+  padding-left: 0.5rem;
+  color: ${({ theme }) => theme.colors.bluegray};
+`;
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
@@ -40,26 +51,23 @@ class BlogIndex extends React.Component {
                 to={node.fields.slug}
               >
                 <Post key={node.fields.slug}>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    {title}
-                  </h3>
-                  <small>
-                    <span
-                      className="material-icons"
-                      style={{
-                        ...scale(-1 / 5),
-                        lineHeight: "auto",
-                        marginRight: "4px",
-                      }}
-                    >
-                      calendar_today
-                    </span>
-                    {node.frontmatter.date}
-                  </small>
+                  <Title>
+                    <TitleText>{title}</TitleText>
+                    <PostDate>
+                      <span
+                        className="material-icons"
+                        style={{
+                          ...scale(-1 / 5),
+                          lineHeight: "auto",
+                          marginRight: "4px",
+                        }}
+                      >
+                        calendar_today
+                      </span>
+                      {node.frontmatter.date}
+                    </PostDate>
+                  </Title>
+
                   <p
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
