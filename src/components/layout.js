@@ -6,8 +6,8 @@ import { Header } from "./Header";
 
 const StyledLayout = styled.div`
   @font-face {
-    font-family: "RIDIBatang";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff")
+    font-family: "IBMPlexSansKR-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
       format("woff");
     font-weight: normal;
     font-style: normal;
@@ -15,7 +15,7 @@ const StyledLayout = styled.div`
   height: 100%;
 `;
 const Main = styled.main`
-  font-family: "RIDIBatang";
+  font-family: "IBMPlexSansKR-Regular";
   width: 100%;
   max-width: 800px;
   margin: 0 auto;

@@ -17,55 +17,7 @@ const SubTitle = styled.div`
     margin-left: 4px;
   }
 `;
-const Post = styled.section`
-  h1,
-  h2,
-  h3 {
-    margin-top: 1em;
-    padding: 0.3em 0;
-  }
-
-  p {
-    margin-bottom: 0.8125rem;
-
-    .language-text {
-      font-family: "RIDIBatang";
-      background-color: #ffdeeb;
-      color: #e55475;
-      padding: 0.3em;
-      text-shadow: none;
-    }
-  }
-
-  a:not(.gatsby-resp-image-link) {
-    border-bottom: 2px solid ${({ theme }) => theme.colors.yellow};
-
-    :hover {
-      color: #fff;
-      background: ${({ theme }) => theme.colors.yellow};
-      border: 0;
-    }
-  }
-
-  .gatsby-resp-image-link {
-    padding: 1rem;
-  }
-
-  blockquote {
-    border-left: 4px solid ${({ theme }) => theme.colors.gray1};
-    margin: 0;
-    padding: 0 1.666rem;
-    color: #676767;
-  }
-
-  hr {
-    background: ${({ theme }) => theme.colors.gray2};
-  }
-
-  .language-javascript {
-    font-family: "Consolas";
-  }
-`;
+const Post = styled.section``;
 
 const StyledDiscussionEmbed = styled(DiscussionEmbed)`
   width: 100%;
