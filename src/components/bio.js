@@ -5,11 +5,8 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
+import { graphql, StaticQuery } from "gatsby";
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
-
-import { rhythm } from "../utils/typography";
 import styled from "styled-components";
 
 const Layout = styled.div`
@@ -40,20 +37,6 @@ export const Bio = () => {
         const { author } = data.site.siteMetadata;
         return (
           <Layout>
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: "auto",
-                marginTop: "auto",
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
             <Description>
               <Author>
                 <Nickname>KOAL</Nickname> ({author})
@@ -69,13 +52,6 @@ export const Bio = () => {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile.jpeg/" }) {
-      childImageSharp {
-        fixed(width: 50, height: 50) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     site {
       siteMetadata {
         author
