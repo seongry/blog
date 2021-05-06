@@ -41,7 +41,9 @@ export const Bio = () => {
               <Author>
                 <Nickname>KOAL</Nickname> ({author})
               </Author>
-              <SelfProduce>#Web #FrontEnd Still Learn</SelfProduce>
+              <SelfProduce>
+                좋은 글 쓰고 싶고 꾸준히 성장하고 싶은 Frontend 개발자 입니다
+              </SelfProduce>
             </Description>
           </Layout>
         );

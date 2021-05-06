@@ -44,7 +44,7 @@ export const Header = () => {
         >
           코알 데브 로그
         </Link>
-        <a href="https://github.com/seongry">
+        <a href="https://github.com/seongry" target="_blank">
           <FontAwesomeIcon icon={faGithubAlt} />
         </a>
       </HeaderContents>
