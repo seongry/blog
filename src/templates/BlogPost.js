@@ -1,4 +1,3 @@
-import { DiscussionEmbed } from "disqus-react";
 import { graphql } from "gatsby";
 import React from "react";
 import styled from "styled-components";
@@ -7,6 +6,7 @@ import { Layout } from "../components/Layout";
 import { Pagination } from "../components/Pagination";
 import SEO from "../components/Seo";
 import { TagList } from "../components/TagList";
+import Utterances from "../components/Utterances";
 import { rhythm, scale } from "../utils/typography";
 
 const Title = styled.h1`
@@ -20,20 +20,12 @@ const SubTitle = styled.div`
 `;
 const Post = styled.section``;
 
-const StyledDiscussionEmbed = styled(DiscussionEmbed)`
-  width: 100%;
-`;
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const tags = this.props.data.markdownRemark.frontmatter.tags;
     const { previous, next } = this.props.pageContext;
-    const disqusShortname = "koal";
-    const disqusConfig = {
-      identifier: post.id,
-      title: post.frontmatter.title,
-    };
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -64,10 +56,7 @@ class BlogPostTemplate extends React.Component {
         <Bio />
 
         <Pagination previous={previous} next={next} />
-        <StyledDiscussionEmbed
-          shortname={disqusShortname}
-          config={disqusConfig}
-        />
+        <Utterances repo="seongry/seongry.github.io" theme="github-light" />
       </Layout>
     );
   }
