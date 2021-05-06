@@ -41,7 +41,7 @@ export const Bio = () => {
               <Author>
                 <Nickname>KOAL</Nickname> ({author})
               </Author>
-              <SelfProduce>#Web #FrontEnd Still Learn 👩‍💻</SelfProduce>
+              <SelfProduce>#Web #FrontEnd Still Learn</SelfProduce>
             </Description>
           </Layout>
         );

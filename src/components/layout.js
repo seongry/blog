@@ -24,7 +24,7 @@ const StyledLayout = styled.div`
 const Main = styled.main`
   font-family: "IBMPlexSansKR-Regular";
   width: 100%;
-  max-width: 800px;
+  max-width: 40rem;
   margin: 0 auto;
 
   @media screen and (max-width: 768px) {
