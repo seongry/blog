@@ -22,7 +22,7 @@ const Post = styled.section`
   line-height: 1.8;
 
   a {
-    color: ${({ theme }) => theme.colors.purple};
+    color: ${({ theme }) => theme.colors.purple} !important;
   }
 
   .token.operator,
