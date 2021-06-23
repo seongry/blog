@@ -1,5 +1,5 @@
 ---
-title: "(번역) Common mistakes with React Testing Library"
+title: "Common mistakes with React Testing Library"
 date: 2021-06-20
 tags:
   - react
