@@ -18,7 +18,33 @@ const SubTitle = styled.div`
     margin-left: 4px;
   }
 `;
-const Post = styled.section``;
+const Post = styled.section`
+  line-height: 1.8;
+
+  a {
+    color: ${({ theme }) => theme.colors.purple};
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    background: #f5f2f0;
+  }
+
+  .language-text {
+    color: #eb5757;
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+  }
+
+  blockquote {
+    border-left: 5px solid ${({ theme }) => theme.colors.purple};
+    margin: 0 0 1.666rem 0;
+    padding: 0 1.666rem;
+  }
+`;
 
 class BlogPostTemplate extends React.Component {
   render() {
