@@ -68,7 +68,7 @@ module.exports = {
         short_name: `KoalLog`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#748ffc`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `content/assets/koala-donut.png`,
       },
