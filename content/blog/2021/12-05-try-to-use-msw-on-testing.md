@@ -1,8 +1,9 @@
 ---
 title: "테스트 환경에 MSW 도입"
-date: 2021-12-06
+date: 2021-12-05
 tags:
-  - javascript
+  - react
+  - test
   - TIL
 ---
 
