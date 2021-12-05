@@ -4,6 +4,7 @@ date: 2021-08-09
 tags:
   - javascript
   - 번역
+  - NOT_READY
 ---
 
 [원문](https://bluepnume.medium.com/functional-ish-javascript-205c05d0ed08)
