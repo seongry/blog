@@ -246,7 +246,7 @@ TestingLibraryElementError: "blah" 규칙을 가진 접근가능한 엘리먼트
 
 버튼 역할을 가지려고 버튼에 `role=button` 를 추가할 필요가 없었다는 것에 주의하세요. 이건 우리를 다음 조언으로 완벽하게 이어지게 하는 암묵적인 역할을 합니다.
 
-**조언: ["어떤 쿼리를 써야할까요" 가이드](<[https://testing-library.com/docs/guide-which-query](https://testing-library.com/docs/guide-which-query)>)를 읽고 추천을 따르세요.**
+**조언: ["어떤 쿼리를 써야할까요" 가이드](https://testing-library.com/docs/guide-which-query)를 읽고 추천을 따르세요.**
 
 ## `aria-`, `role` 및 기타 접근성 속성(accessibility attributes)을 잘못 추가하기
 
@@ -260,7 +260,7 @@ render(<button role="button">Click me</button>);
 render(<button>Click me</button>);
 ```
 
-손쉬운 접근성 속성은 좋든 싫든 불필요할 뿐 아니라(앞에서 본 사례처럼), 스크린 리더와 서비스 이용자들을 혼란스럽게 만듭니다. 접근성 속성은 정말 의미론적 HTML이 use case를 만족시키지 못할 때만 필요합니다.([downshift의 autocomplete 처럼](<[https://github.com/downshift-js/downshift](https://github.com/downshift-js/downshift)>) 접근성이 향상된 비 네이티브 UI를 만들고 싶을 때 처럼요) 혹시 이게 당신이 만들던 거라면, 접근성을 향상시키는 기존의 라이브러리를 이용하거나 WAI-ARIA practices를 따르세요. 거기엔 [좋은 예시들](<[https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html)>)이 있습니다.
+손쉬운 접근성 속성은 좋든 싫든 불필요할 뿐 아니라(앞에서 본 사례처럼), 스크린 리더와 서비스 이용자들을 혼란스럽게 만듭니다. 접근성 속성은 정말 의미론적 HTML이 use case를 만족시키지 못할 때만 필요합니다.([downshift의 autocomplete 처럼](https://github.com/downshift-js/downshift) 접근성이 향상된 비 네이티브 UI를 만들고 싶을 때 처럼요) 혹시 이게 당신이 만들던 거라면, 접근성을 향상시키는 기존의 라이브러리를 이용하거나 WAI-ARIA practices를 따르세요. 거기엔 [좋은 예시들](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html)이 있습니다.
 
 > Note: "role"을 통해 `input` 에 접근성을 향상시키기 위해선 `type` 속성을 지정해야 합니다!
 
@@ -277,7 +277,7 @@ fireEvent.change(input, { target: { value: "hello world" } });
 userEvent.type(input, "hello world");
 ```
 
-[`@testing-library/user-event`](<[https://github.com/testing-library/user-event](https://github.com/testing-library/user-event)>)는 `fireEvent` 의 기반으로 빌드된 패키지지만, 사용자 상호작용과 더 유사한 여러 메서드들을 제공합니다. 앞의 예제에서, `fireEvent.change` 는 단순히 input의 하나의 변경 이벤트를 트리거할 것입니다. 하지만 `type` 호출은 문자마다 `keyDown`, `keyPress`, `keyUp` 이벤트들을 트리거합니다. 이쪽이 훨씬 실제 사용자 상호작용과 유사하죠. 이것은 변경 이벤트를 수신하지 않는 라이브러리와도 잘 동작한다는 이점이 있습니다.
+[`@testing-library/user-event`](https://github.com/testing-library/user-event)는 `fireEvent` 의 기반으로 빌드된 패키지지만, 사용자 상호작용과 더 유사한 여러 메서드들을 제공합니다. 앞의 예제에서, `fireEvent.change` 는 단순히 input의 하나의 변경 이벤트를 트리거할 것입니다. 하지만 `type` 호출은 문자마다 `keyDown`, `keyPress`, `keyUp` 이벤트들을 트리거합니다. 이쪽이 훨씬 실제 사용자 상호작용과 유사하죠. 이것은 변경 이벤트를 수신하지 않는 라이브러리와도 잘 동작한다는 이점이 있습니다.
 
 저희는 계속 `@testing-library/user-event` 가 약속한 것을 가져다주는지 확인하고 있습니다: 특정 작업을 수행할 때 유저가 실행할 모든 동일한 이벤트를 실행합니다. 저는 저희가 아직 거기에 도달했다고 생각하지는 않기 때문에 `@testing-library/dom` 에 포함되지 않았습니다.(언젠가 미래엔 될지도 모르지만요) 하지만 `fireEvent` 보다 `@testing-library/user-event`의 유틸리티를 사용하는 것을 강력히 추천합니다.
 
