@@ -4,7 +4,6 @@ date: 2022-06-05
 tags:
   - react
   - 번역
-  - NOT_READY
 ---
 
 [원문](https://tkdodo.eu/blog/hooks-dependencies-and-stale-closures)
@@ -13,7 +12,7 @@ dependency나 hook 같은 단어의 번역은 리액트 공식문서를 기준�
 
 ---
 
-[클로저](<https://ko.wikipedia.org/wiki/%ED%81%B4%EB%A1%9C%EC%A0%80_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)>)로 작업하는 것은 꽤 까다로운 일이 될 수 있습니다. 특히 리엑트에서 의존성를 가진 hook을 다룰때 까다로운 일이 될 수 있습니다. (useEffect, useMemo, useCallback을 생각해 보세요.) 많은 버그와 좌절들이 (리액트가 자체적으로 도입한 것이 아님에도) 해당 개념에 밀접하게 연관되어 있습니다. 클로저는 오히려 hook이 의존하는 언어 개념입니다.
+[클로저](<https://ko.wikipedia.org/wiki/%ED%81%B4%EB%A1%9C%EC%A0%80_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)>)로 작업하는 것은 꽤 까다로운 일이 될 수 있습니다. 특히 리액트에서 의존성를 가진 hook을 다룰때 까다로운 일이 될 수 있습니다. (useEffect, useMemo, useCallback을 생각해 보세요.) 많은 버그와 좌절들이 (리액트가 자체적으로 도입한 것이 아님에도) 해당 개념에 밀접하게 연관되어 있습니다. 클로저는 오히려 hook이 의존하는 언어 개념입니다.
 
 저는 Mark Erikson의 이 질문을 좋아합니다.
 
@@ -51,7 +50,7 @@ _logCount_ 는 _count_ prop 처럼 Counter 컴포넌트에서 정의한 모든 �
 ```js
 // moving-it-up
 
-// ❌ 'count' 가 정의되지 않음. (no-undef)
+// ❌ 'count' 가 정의되지 않음 (no-undef)
 const logCount = () => {
   console.log("count", count);
 };
@@ -103,13 +102,13 @@ function log(value) {
 
 > 자바스크립트에서 클로저는 함수가 생성될 때마다 함수가 생성되는 시점에 생성된다.
 
-클로저를 "클릭"하게 만든 비유로 이것을 설명하려고 합니다. :
+클로저를 "클릭"하게 만든 비유로 이것을 설명하려고 합니다.
 
 함수를 만들때 마다 사진을 찍는다고 가정해봅시다. 그 사진은 사진이 생성되었을 시점의 모든 것을 포함하고 있습니다. 사진의 전경에는 가장 중요한 것들(함수가 무슨 일을 하는지, 실행중인 코드 등등)이 있습니다. 사진의 배경에는 함수 외부에 있지만 내부에서 사용하는 모든 것들이 있습니다. _count_ 변수가 사진을 망쳐놓은 것처럼 그 안에도 있습니다.
 
 사진 안에 있는 것들은 바뀌지 않습니다. 한번 사진을 찍고나면 안의 내용들은 봉인됩니다.(포토샵을 사용하기 전까지는요.)
 
-함수 호출은 그저 사진을 보고 그 안의 작업을 수행하는 것과 같습니다. 그러면 사진이 생성된 시점으로부터 모든 것을 보게 될 것입니다.
+함수 호출은 그저 사진을 보고 그 안의 작업을 수행하는 것과 같습니다. 그러면 사진이 생성된 시점을 기준으로 모든 것을 보게 될 것입니다.
 
 함수가 생성될 때마다 우리는 이전 사진은 버리고 새 사진을 가져옵니다. 리액트가 컴포넌트 트리를 리렌더링할 때 모든 것을 하향식으로 재실행합니다. 여기에서 이것은 우리에게 유리하게 동작합니다: _count_ 상태가 업데이트 될 때 _App_ 컴포넌트가 다시 렌더링 되기 때문에 _logCount_ 함수는 재생성됩니다.
 
@@ -139,8 +138,8 @@ function log(value) {
 unction App() {
   const [count, increment] = React.useReducer((prev) => prev + 1, 1)
 
-  // 🚨 the linter says we should include count
-  // as a dependency, but we don't
+  // 🚨 linter가 count를 의존성으로 포함시켜야한다고 이야기하지만
+  // 그렇게 하지 않음
   const logCount = React.useCallback(() => {
     log(count)
   }, [])
@@ -161,7 +160,7 @@ render(
   </div>
 )
 
-// just a way to make logging work in this interactive example
+// 단순히 해당 인터렉티브 예제에서 로그를 만드는 한가지 방법
 function log(value) {
   document.getElementById('result2').innerHTML = 'log: ' + String(value)
 }
@@ -200,3 +199,36 @@ const FastComponent = React.memo(
 ```
 
 리액트 공식 문서가 제안하는대로 우리는 "nextProp을 렌더링에 전달했을 경우 prevProp을 렌더링에 전달하는 것과 동일한 결과를 반환하면 true를 반환하고, 그렇지 않으면 false를 반환" 할 수 있습니다.
+
+저흰 렌더링 결과의 _값_ 에만 관심이 있는데, 그럼 이런 접근 방식에는 무슨 문제가 있을까요?
+
+정답은 또다시 _오래된_ 클로저에 있습니다. 만일 호출자(caller) 컴포넌트가 어떠한 이유로 값은 바뀌지 않았는데 _onChange_ 를 재생성했다면, 저희는 SlowComponent의 새로운 사진을 받을 수 없습니다. 계속해서 오래된 _onChange_ 함수를 봐야한다는 의미지요.
+
+```javascript
+// a-stale-closure
+function User({ name }) {
+  const [count, increment] = React.useReducer(prev => prev + 1, 1);
+
+  // 🚨 name은 오래될 수 있음
+  const logUser = () => {
+    console.log(name, count);
+  };
+
+  return (
+    <div>
+      <button onClick={increment}>increment</button>
+      <button onClick={logUser}>log</button>
+      <FastComponent value={count} onChange={logUser} />
+    </div>
+  );
+}
+```
+
+_logUser_ 함수의 클로저에는 name과 count가 포함되어 있지만 FastComponent는 name 속성을 모릅니다. FastComponent는 value가 변경될 때만 재생성 될 것입니다. 그러므로 _onChange_ 가 호출되면 해당 함수는 마지막으로 _count_ 가 변경되었을 시점의, 오래되었을지 아닐지 알 수 없는 _name_ 을 보게 됩니다.
+
+이는 굉장히 까다로운 상황인데, 재현하기 매우 까다로운 버그 리포트를 받기전까지는 어플리케이션이 몇 주, 혹은 심지어 몇 달 동안은 멀쩡하게 잘 돌아갈 것이기 때문입니다.
+
+# 거짓말을 하지 마세요
+
+당신이 할 수 있는 최선의 방법은 의존성에 대해 거짓말을 해여 스스로 이러한 상황에 빠지지 않는 것입니다.
+함수는 쉽게 의존성 목록에서 제외될 수 없으므로, linter를 심각하게 받아들이고 코드베이스에서 linter 규칙을 error로 만드세요.
