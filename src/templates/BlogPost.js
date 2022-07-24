@@ -1,7 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { Bio } from "../components/Bio";
 import { Layout } from "../components/Layout";
 import { Pagination } from "../components/Pagination";
 import SEO from "../components/Seo";
@@ -79,8 +78,6 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
-
         <Pagination previous={previous} next={next} />
         <Utterances repo="seongry/seongry.github.io" theme="github-light" />
       </Layout>
