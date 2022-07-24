@@ -20,6 +20,11 @@ const StyledHeader = styled.header`
     }
   }
 `;
+const RightLinkGroup = styled.div`
+  a + a {
+    margin-left: 8px;
+  }
+`;
 
 const HeaderContents = styled.div`
   width: 100%;
@@ -44,13 +49,22 @@ export const Header = () => {
         >
           코알 데브 로그
         </Link>
-        <a
-          href="https://github.com/seongry"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithubAlt} />
-        </a>
+        <RightLinkGroup>
+          <a
+            href="https://seongry.notion.site/TIL-e81d03007f1e43738720ab5ec85e2da2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TIL
+          </a>
+          <a
+            href="https://github.com/seongry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithubAlt} />
+          </a>
+        </RightLinkGroup>
       </HeaderContents>
     </StyledHeader>
   );
